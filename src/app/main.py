@@ -12,10 +12,8 @@ colunas = ['tamanho','ano','garagem']
 modelo = pickle.load(open('/Users/kaduangelucci/Documents/Estudos/Alura/Deploy de ML/ml_deploy/models/modelo.sav','rb'))
 
 app = Flask(__name__)
-app.config['BASIC_AUTH_USERNAME'] = os.environ.get("user_name")
-# app.config['BASIC_AUTH_USERNAME'] = 'kadu'
-app.config['BASIC_AUTH_PASSWORD'] = os.environ.get('user_password')
-# app.config['BASIC_AUTH_PASSWORD'] = '32428283'
+app.config['BASIC_AUTH_USERNAME'] = os.environ.get("BASIC_AUTH_USERNAME")
+app.config['BASIC_AUTH_PASSWORD'] = os.environ.get('BASIC_AUTH_PASSWORD')
 
 basic_auth = BasicAuth(app)
 
